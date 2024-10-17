@@ -1,0 +1,108 @@
+:root {
+    --show_palette: hidden;
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 32px;
+}
+
+#eingabefeld {
+    grid-area: 1 / 1 / 3 / 5;
+    -webkit-user-select: text; /* Safari */
+    -ms-user-select: text; /* IE 10 and IE 11 */
+    user-select: text; /* Standard syntax */
+}
+
+#gleich {
+    grid-area: 6 / 4 / 8 / 5;
+}
+
+#palette {
+    grid-area: 8 / 1 / 10 / 5;
+    cursor: none;
+    visibility: var(--show_palette);
+}
+
+#plus {
+    cursor: pointer;
+}
+
+#minus {
+    cursor: pointer;
+}
+
+#mal {
+    cursor: pointer;
+}
+
+#durch {
+    cursor: pointer;
+}
+
+#null:hover {
+    background-color: rgb(49, 22, 14);
+}
+
+#eins:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+#zwei:hover {
+    background-color: rgb(49, 22, 14);
+}
+
+#drei:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+#vier:hover {
+    background-color: rgb(49, 22, 14);
+}
+
+#fünf:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+#sechs:hover {
+    background-color: rgb(49, 22, 14);
+}
+
+#sieben:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+#acht:hover {
+    background-color: rgb(49, 22, 14);
+}
+
+#neun:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+.item {
+    background-color: rgb(39, 34, 42);
+    color: whitesmoke;
+    overflow: hidden;
+    z-index: 300;
+    border: 1px black solid;
+    border-radius: 15px;
+    margin: 2px;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.container {
+    left: 50%;
+    top: 50%;
+    display: grid;
+    width: 400px;
+    height: 700px;
+    resize: both;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+}
