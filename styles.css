@@ -1,5 +1,6 @@
 :root {
     --show_palette: hidden;
+    --hover_scale: 1.06;
 }
 
 * {
@@ -21,6 +22,10 @@
     grid-area: 6 / 4 / 8 / 5;
 }
 
+#gleich:hover {
+    transform: scale(var(--hover_scale));
+}
+
 #palette {
     grid-area: 8 / 1 / 10 / 5;
     cursor: none;
@@ -31,56 +36,98 @@
     cursor: pointer;
 }
 
+#plus:hover {
+    transform: scale(var(--hover_scale));
+}
+
 #minus {
     cursor: pointer;
+}
+
+#minus:hover {
+    transform: scale(var(--hover_scale));
 }
 
 #mal {
     cursor: pointer;
 }
 
+#mal:hover {
+    transform: scale(var(--hover_scale));
+}
+
 #durch {
     cursor: pointer;
 }
 
+#durch:hover {
+    transform: scale(var(--hover_scale));
+}
+
 #null:hover {
     background-color: rgb(49, 22, 14);
+    transform: scale(var(--hover_scale));
 }
 
 #eins:hover {
     background-color: rgb(50, 50, 50);
+    transform: scale(var(--hover_scale));
 }
 
 #zwei:hover {
     background-color: rgb(49, 22, 14);
+    transform: scale(var(--hover_scale));
 }
 
 #drei:hover {
     background-color: rgb(50, 50, 50);
+    transform: scale(var(--hover_scale));
 }
 
 #vier:hover {
     background-color: rgb(49, 22, 14);
+    transform: scale(var(--hover_scale));
 }
 
 #fünf:hover {
     background-color: rgb(50, 50, 50);
+    transform: scale(var(--hover_scale));
 }
 
 #sechs:hover {
     background-color: rgb(49, 22, 14);
+    transform: scale(var(--hover_scale));
 }
 
 #sieben:hover {
     background-color: rgb(50, 50, 50);
+    transform: scale(var(--hover_scale));
 }
 
 #acht:hover {
     background-color: rgb(49, 22, 14);
+    transform: scale(var(--hover_scale));
 }
 
 #neun:hover {
     background-color: rgb(50, 50, 50);
+    transform: scale(var(--hover_scale));
+}
+
+#plusminus:hover {
+    transform: scale(var(--hover_scale));
+}
+
+#clear:hover {
+    transform: scale(var(--hover_scale));
+}
+
+#löschen:hover {
+    transform: scale(var(--hover_scale));
+}
+
+#punkt:hover {
+    transform: scale(var(--hover_scale));
 }
 
 .item {
@@ -94,6 +141,7 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+    transition: transform 0.3s ease;
 }
 
 .container {
