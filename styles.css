@@ -1,158 +1,107 @@
-:root {
-    --show_palette: hidden;
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: rgb(39, 34, 42);
     --hover_scale: 1.06;
+    --orderline1: 1;
+    --orderline3: 3;
 }
 
-* {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: bold;
-    font-style: normal;
+h1 {color: whitesmoke;}
+
+.calculator {
+    width: 200px;
+    height: 308px;
+    margin: 0 auto;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+#display {
+    margin-bottom: 5px;
+    padding: 2px;
     font-size: 32px;
-}
-
-#eingabefeld {
-    grid-area: 1 / 1 / 3 / 5;
-    -webkit-user-select: text; /* Safari */
-    -ms-user-select: text; /* IE 10 and IE 11 */
-    user-select: text; /* Standard syntax */
-}
-
-#gleich {
-    grid-area: 6 / 4 / 8 / 5;
-}
-
-#gleich:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#palette {
-    grid-area: 8 / 1 / 10 / 5;
-    cursor: none;
-    visibility: var(--show_palette);
-}
-
-#plus {
-    cursor: pointer;
-}
-
-#plus:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#minus {
-    cursor: pointer;
-}
-
-#minus:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#mal {
-    cursor: pointer;
-}
-
-#mal:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#durch {
-    cursor: pointer;
-}
-
-#durch:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#null:hover {
-    background-color: rgb(49, 22, 14);
-    transform: scale(var(--hover_scale));
-}
-
-#eins:hover {
-    background-color: rgb(50, 50, 50);
-    transform: scale(var(--hover_scale));
-}
-
-#zwei:hover {
-    background-color: rgb(49, 22, 14);
-    transform: scale(var(--hover_scale));
-}
-
-#drei:hover {
-    background-color: rgb(50, 50, 50);
-    transform: scale(var(--hover_scale));
-}
-
-#vier:hover {
-    background-color: rgb(49, 22, 14);
-    transform: scale(var(--hover_scale));
-}
-
-#fünf:hover {
-    background-color: rgb(50, 50, 50);
-    transform: scale(var(--hover_scale));
-}
-
-#sechs:hover {
-    background-color: rgb(49, 22, 14);
-    transform: scale(var(--hover_scale));
-}
-
-#sieben:hover {
-    background-color: rgb(50, 50, 50);
-    transform: scale(var(--hover_scale));
-}
-
-#acht:hover {
-    background-color: rgb(49, 22, 14);
-    transform: scale(var(--hover_scale));
-}
-
-#neun:hover {
-    background-color: rgb(50, 50, 50);
-    transform: scale(var(--hover_scale));
-}
-
-#plusminus:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#clear:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#löschen:hover {
-    transform: scale(var(--hover_scale));
-}
-
-#punkt:hover {
-    transform: scale(var(--hover_scale));
-}
-
-.item {
+    width: 95%;
+    text-align: left;  /* Eingaben erscheinen von links */
     background-color: rgb(39, 34, 42);
     color: whitesmoke;
-    overflow: hidden;
-    z-index: 300;
-    border: 1px black solid;
-    border-radius: 15px;
-    margin: 2px;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
-    transition: transform 0.3s ease;
-    text-align: center;
-    padding: 25px 20px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    outline: none;
 }
 
-.container {
-    left: 50%;
-    top: 50%;
+.buttons {
     display: grid;
-    width: 400px;
-    height: 700px;
-    resize: both;
-    grid-template-columns: 100px 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px;
+    transform-origin: center center;
+}
+
+button {
+    font-size: 32px;
+    background-color: rgb(39, 34, 42);
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    color: whitesmoke;
+    text-align: center;
+    margin: 2px;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    transform: scale(var(--hover_scale));
+}
+
+/* text-align and cursor*/
+#zero {text-align: center; cursor: default;}
+#one, #four, #seven {text-align: start; cursor: default;}
+#two, #five, #eight {text-align: center; cursor: default;}
+#three, #six, #nine {text-align: end; cursor: default;}
+
+#zero:hover, #two:hover, #four:hover, #six:hover, #eight:hover {background-color: rgb(49, 22, 14); /* Farbe bei Hover für gerade Zahlen */} 
+#one:hover, #three:hover, #five:hover, #seven:hover, #nine:hover {background-color: rgb(50, 50, 50); /* Farbe bei Hover für ungerade Zahlen */}
+
+button:nth-child(1), button:nth-child(2), button:nth-child(3), button:nth-child(4) {
+    cursor: pointer;  /* Zeigefinger bei den Grundrechenarten */
+}
+
+#calculate {
+    grid-area: 3 / 4 / 5 / 5;
+}
+
+.numbers {
+    grid-area: 2 / 1 / 5 / 4;
+    display: flex;
+    width: 150px;
+    flex-wrap: wrap;
+    transform-origin: center center;
+}
+
+#line1 {
+    order: var(--orderline1);
+    grid-area: 1 / 1 / 2 / 4;
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px;
+    transform-origin: center center;
+}
+
+#line2 {
+    order: 2;
+    grid-area: 2 / 1 / 3 / 4;
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px;
+    transform-origin: center center;
+}
+
+#line3 {
+    order: var(--orderline3);
+    grid-area: 3 / 1 / 4 / 4;
+    display: grid;
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px;
+    transform-origin: center center;
 }
