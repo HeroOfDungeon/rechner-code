@@ -2,7 +2,9 @@ body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     text-align: center;
     background-color: rgb(39, 34, 42);
-    --hover_scale: 1.06;
+    --hover_scale: 1.06; /* Standartmässig 1.06 */
+    --click_scale: 0.8; /* Standartmässig 0.8 */
+    --hover_scale_time: 1.3s; /* Standartmässig 0.3 */
     --orderline1: 1;
     --orderline3: 3;
 }
@@ -11,15 +13,18 @@ h1 {color: whitesmoke;}
 
 .calculator {
     width: 200px;
-    height: 308px;
+    height: 298px;
     margin: 0 auto;
     border: 1px solid whitesmoke;
     border-radius: 5px;
     padding: 10px;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
+    box-shadow: 5px 5px 10px black;
 }
 
 #display {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
     margin-bottom: 5px;
     padding: 2px;
     font-size: 32px;
@@ -30,6 +35,23 @@ h1 {color: whitesmoke;}
     border: 1px solid whitesmoke;
     border-radius: 5px;
     outline: none;
+}
+
+#copytext {
+    color: whitesmoke;
+    font-size: 13px;
+    position: absolute;
+    z-index: 301;
+    transform: translate(164px, 2px);
+    width: 25px;
+    height: 17px;
+}
+
+#copytext i {
+    font-size: 13px;
+    width: 0px;
+    height: 5px;
+    transform: translateX(-6px);
 }
 
 .buttons {
@@ -47,11 +69,15 @@ button {
     color: whitesmoke;
     text-align: center;
     margin: 2px;
-    transition: transform 0.3s ease;
+    transition: transform var(--hover_scale_time) ease;
 }
 
 button:hover {
     transform: scale(var(--hover_scale));
+}
+
+button:active {
+    transform: scale(var(--click_scale));
 }
 
 /* text-align and cursor*/

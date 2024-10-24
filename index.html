@@ -7,11 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
 </head>
 <body>
     <h1>Rechner</h1>
     <div class="calculator">
-        <input type="text" id="display" disabled>
+        <div id="display-div" >
+            <button id="copytext" onclick="copyValue()"><i class="material-icons" style="visibility: visible;" id="icon_copy">content_copy</i><i class="material-icons" style="visibility: hidden;" id="icon_check">check</i></button>
+            <input type="text" id="display" disabled>
+        </div>
         <div class="buttons">
         <!-- 01 --><button onclick="appendToDisplay('+')">+</button>
         <!-- 02 --><button onclick="appendToDisplay('-')">-</button>
@@ -39,9 +43,8 @@
         <!-- 16 --><button onclick="appendToDisplay('.')">.</button>
         <!-- 17 --><button onclick="appendToDisplay('0')" id="zero">0</button>
         <!-- 18 --><button onclick="deleteLast()"><i class="material-icons" id="delete">backspace</i></button> <!-- Delete Button -->
-        <!-- 19 --><button onclick="toggleOrder()"><i class="material-icons" id="delete">low_priority</i></button> <!-- Anordnen-Button -->
+        <!-- 19 --><button onclick="toggleOrder()"><i class="material-icons">low_priority</i></button> <!-- Anordnen-Button -->
         </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
